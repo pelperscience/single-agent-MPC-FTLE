@@ -83,9 +83,9 @@ for m in np.arange(0, T, dt2):
             D[0,1] = dxTdy0[j,i];
             D[1,0] = dyTdx0[j,i];
             D[1,1] = dyTdy0[j,i];
-            sigma[j,i] = abs((1./Tin)) * max(np.linalg.eigvals(np.dot(D.T, D)))
+            sigma[j,i] = abs((1./Tin)) * max(np.linalg.eigvals(np.dot(D.T, D)))    ############################### FTLE计算公式不同 ftle = .5*log(max_eigenvalue)/abs(timespan)
     
-    sigma = (sigma - np.min(sigma))/(np.max(sigma) - np.min(sigma))
+    sigma = (sigma - np.min(sigma))/(np.max(sigma) - np.min(sigma))  ############################### FTLE计算公式不同 ftle = .5*log(max_eigenvalue)/abs(timespan)
     solfor += [sigma]
 
     # Backward time LCS
@@ -110,9 +110,9 @@ for m in np.arange(0, T, dt2):
             D[0,1] = dxTdy0[j,i];
             D[1,0] = dyTdx0[j,i];
             D[1,1] = dyTdy0[j,i];
-            sigma[j,i] = (1./Tin) * max(np.linalg.eigvals(np.dot(D.T, D)))
+            sigma[j,i] = (1./Tin) * max(np.linalg.eigvals(np.dot(D.T, D)))  ############################### FTLE计算公式不同 ftle = .5*log(max_eigenvalue)/abs(timespan)
     
-    sigma = (sigma - np.min(sigma))/(np.max(sigma) - np.min(sigma))
+    sigma = (sigma - np.min(sigma))/(np.max(sigma) - np.min(sigma))  ############################### FTLE计算公式不同 ftle = .5*log(max_eigenvalue)/abs(timespan)
     solbac += [sigma]
     
     print("Time = " + str(m))
