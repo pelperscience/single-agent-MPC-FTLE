@@ -40,7 +40,7 @@ anim = animation.FuncAnimation(fig, update, fargs=(qui,),interval=1, blit=False,
 #%%
 from scipy.interpolate import RegularGridInterpolator
 
-uvecint[abs(uvecint)>1e4] = 0; vvecint[abs(vvecint)>1e4] = 0
+uvecint[abs(uvecint)>1e4] = 0; vvecint[abs(vvecint)>1e4] = 0        ################################## 改成< 吗?
 ufield = RegularGridInterpolator((t_days, y02, x02), uvecint, bounds_error = False, fill_value = 0)
 vfield = RegularGridInterpolator((t_days, y02, x02), vvecint, bounds_error = False, fill_value = 0)
 
