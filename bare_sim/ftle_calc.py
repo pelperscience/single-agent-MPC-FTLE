@@ -111,7 +111,7 @@ for m in np.arange(0, T, dt2):
             D[1,0] = dyTdx0[j,i];
             D[1,1] = dyTdy0[j,i];
             sigma[j,i] = (1./Tin) * max(np.linalg.eigvals(np.dot(D.T, D)))  ############################### FTLE计算公式不同 ftle = .5*log(max_eigenvalue)/abs(timespan)
-    
+                                                                            ###############################            ftle[i, j] = (1./np.abs(T))*np.log(np.sqrt(eig_lya.max()))
     sigma = (sigma - np.min(sigma))/(np.max(sigma) - np.min(sigma))  ############################### FTLE计算公式不同 ftle = .5*log(max_eigenvalue)/abs(timespan)
     solbac += [sigma]
     
