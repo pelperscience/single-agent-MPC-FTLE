@@ -72,8 +72,8 @@ for m in np.arange(0, T, dt2):
     yT = yin_for[1]
 
     # Finite difference to compute the gradient
-    dxTdx0, dxTdy0 = np.gradient(xT, dx, dx)
-    dyTdx0, dyTdy0 = np.gradient(yT, dx, dx)
+    dxTdx0, dxTdy0 = np.gradient(xT, dx, dx)  ############################### dxTdy0, dxTdx0 = np.gradient(xT, dx, dx)
+    dyTdx0, dyTdy0 = np.gradient(yT, dx, dx)  ############################### dyTdy0, dxTdx0 = np.gradient(yT, dx, dx)
 
     D = np.eye(2)
     sigma = xT.copy()*0
@@ -99,8 +99,8 @@ for m in np.arange(0, T, dt2):
     yT = yin_bac[1]
 
     # Finite difference to compute the gradient
-    dxTdx0, dxTdy0 = np.gradient(xT, dx, dx)
-    dyTdx0, dyTdy0 = np.gradient(yT, dx, dx)
+    dxTdx0, dxTdy0 = np.gradient(xT, dx, dx)  ############################### dxTdy0, dxTdx0 = np.gradient(xT, dx, dx)
+    dyTdx0, dyTdy0 = np.gradient(yT, dx, dx)  ############################### dyTdy0, dxTdx0 = np.gradient(yT, dx, dx)
 
     D = np.eye(2)
     sigma = xT.copy()*0
